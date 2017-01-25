@@ -4,5 +4,5 @@ class Article < ApplicationRecord
   has_many :articles_categories
   has_many :categories, through: :articles_categories
   has_many :revisions, through: :sections
-  has_many :revisors, through: :revisions
+  has_many :revisors, through: :revisions, source: :user
 end
