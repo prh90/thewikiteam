@@ -16,12 +16,21 @@ class SectionsController < ApplicationController
 	end
 
 	def edit
+		@section = Section(params[:id])
+
 	end
 
 	def show
 	end
 
 	def update
+		@section = Section(params[:id])
+		@revision = Revision.new(user_id: session[:user_id], section_id: params[:id], body: )
+
+		if @revision.save
+			@section.update_attribute(body: @reivison.body)
+		else
+		end
 	end
 
 	private
