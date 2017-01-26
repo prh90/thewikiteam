@@ -7,7 +7,10 @@
 </p>
 <p>
   <%= f.label :summary, style: 'vertical-align: top;' %>
-  <%= f.text_field :summary,  style: 'width: 250px; height: 250px;' %>
+  <div>
+  <%= f.cktext_area :summary, rows: 10 %>
+</div>
+  <!-- <%= f.text_field :summary,  style: 'width: 250px; height: 250px;' %> -->
 </p>
 <p>
   <%= f.label "Related Categories" %></br>
