@@ -7,7 +7,7 @@
 <% @sections.each do |section| %>
   <h3><%= section.title %></h3>
   <p>
-    <%= section.body %>
+    <%= sanitize section.body %>
   </p>
 
 <% end %>
