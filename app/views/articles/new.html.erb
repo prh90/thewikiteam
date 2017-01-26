@@ -8,7 +8,7 @@
 <p>
   <%= f.label :summary, style: 'vertical-align: top;' %>
   <div>
-  <%= f.cktext_area :summary, rows: 10 %>
+  <%= f.cktext_area :summary, rows: 10, ckeditor: {extraPlugins: 'footnotes'} %>
 </div>
   <!-- <%= f.text_field :summary,  style: 'width: 250px; height: 250px;' %> -->
 </p>

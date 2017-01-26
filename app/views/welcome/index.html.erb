@@ -10,11 +10,11 @@
 	<% if @articles %>
 		<% @articles.each do |article| %>
 			<h1><%= article.title %></h1>
-			<p><%= article.summary %></p>
+			<p><%= sanitize article.summary %></p>
 		<% end %>
 	<% end %>
 
 
 
 
- <%= link_to "Create an article", new_article_path %> 
+ <%= link_to "Create an article", new_article_path %>
