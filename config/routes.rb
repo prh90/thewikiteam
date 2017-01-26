@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   	resources :sections, :shallow => true 
   end
 
-
+  get 'login', to: 'sessions#new'
 
   root "welcome#index"
 
 end
-
