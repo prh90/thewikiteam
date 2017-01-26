@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require ckeditor/init
+//= require_tree .
 
 CKEDITOR.config.autoParagraph = false;
