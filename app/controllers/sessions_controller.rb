@@ -6,12 +6,13 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(login_params)
-    session[:user_id] = user.id
 
-    if session[:user_id]
+    if user
+      session[:user_id] = user.id
       redirect_to root_path
     else
-      redirect_to login_path
+      @error = "Your email or password is incorrect"
+      render 'new'
     end
   end
 
