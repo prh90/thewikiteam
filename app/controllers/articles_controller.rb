@@ -7,7 +7,8 @@ class ArticlesController < ApplicationController
     related_categories = article_params[:category_ids].reject(&:empty?)
     # article = {title: article_params[:title], summary: article_params[:summary]}
     # categories = article_params[:category_ids]
-    # p article
+    p "&&&&" * 25
+    p article_params
     # p categories
     # creator_id: current_user.id, Needed to complete submission
     @article = Article.new(title: article_params[:title], summary: article_params[:summary])
