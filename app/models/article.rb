@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+  validates :title, :summary, presence: true
+
   belongs_to :creator, class_name: "User"
   has_many :sections
   has_many :articles_categories
