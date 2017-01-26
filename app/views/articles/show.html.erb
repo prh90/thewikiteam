@@ -2,3 +2,13 @@
 <p>
     <%= sanitize @article.summary %>
 </p>
+
+
+<% @sections.each do |section| %>
+  <h3><%= section.title %></h3>
+  <p>
+    <%= sanitize section.body %>
+  </p>
+
+<% end %>
+<%= link_to "Create A Section", new_article_section_path(@article) %>
