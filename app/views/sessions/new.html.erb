@@ -1,0 +1,10 @@
+<!-- form_tag(action,method) -->
+<%= form_tag(sessions_path, method:'post') do |f| %>
+
+<!-- text_field_tag(id and name) -->
+Email <%= text_field_tag 'user[email]'  %>
+Password <%= text_field_tag 'user[:password]' %>
+
+<!-- submit_tag(text on button) -->
+<%= submit_tag("Log In") %>
+<% end %>

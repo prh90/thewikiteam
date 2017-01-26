@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resource :sessions, only:[:new,:create,:destroy]
   resources :articles, only: [:new, :create, :show]
 
-
+  get 'login', to: 'sessions#new'
 
   root "welcome#index"
 
