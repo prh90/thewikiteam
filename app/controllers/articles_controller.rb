@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
     p article_params
     # p categories
     # creator_id: current_user.id, Needed to complete submission
-    @article = Article.new(creator_id: 1, title: article_params[:title], summary: article_params[:summary])
+    @article = Article.new(creator_id: session[:user_id], title: article_params[:title], summary: article_params[:summary], footer: article_params[:footer])
     if @article.save
       Category.find(related_categories).each {|category| category.articles << @article}
       redirect_to article_path(@article)
@@ -29,6 +29,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :summary, :category_ids => [])
+    params.require(:article).permit(:title, :summary, :footer, :category_ids => [])
   end
 end

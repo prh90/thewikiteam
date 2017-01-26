@@ -11,6 +11,6 @@
 <%= form_for(User.new) do |f| %>
   Username <%= f.text_field :username %>
   Email <%= f.text_field :email %>
-  Password <%= f.text_field :password %>
+  Password <%= f.password_field :password %>
   <%= f.submit %>
 <% end %>
