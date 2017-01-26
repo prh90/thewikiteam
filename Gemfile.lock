@@ -171,11 +171,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   byebug
-<<<<<<< HEAD
-  ckeditor (= 4.1.3)
-=======
-  ckeditor
->>>>>>> development
+  ckeditor (= 4.2.2)
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails

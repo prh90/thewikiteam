@@ -22,10 +22,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @sections = @article.sections
   end
 
-  def show
-  end
 
   private
 

@@ -5,13 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 # Editor
-gem 'ckeditor', '4.1.3'
+gem 'ckeditor', '4.2.2'
 gem 'paperclip'
 # BCrypt gem
 gem 'bcrypt'
-# Gem for editor when user want to create a new article
-gem "ckeditor"
-gem 'paperclip'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use postgresql as the database for Active Record
