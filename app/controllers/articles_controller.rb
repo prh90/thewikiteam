@@ -12,12 +12,16 @@ class ArticlesController < ApplicationController
     # p categories
     # creator_id: current_user.id, Needed to complete submission
     @article = Article.new(title: article_params[:title], summary: article_params[:summary])
-    # if @article.save
-        Category.find(related_categories).each {|category| category.articles << @article}
-    #   redirect_to article_path(@article)
-    # else
-    #   render new_article_path
-    # end
+    if @article.save
+      Category.find(related_categories).each {|category| category.articles << @article}
+      redirect_to article_path(@article)
+    else
+      render new_article_path
+    end
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
 
   private
