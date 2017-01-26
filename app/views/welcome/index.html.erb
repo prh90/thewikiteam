@@ -1,0 +1,20 @@
+<h1>Fuck u</h1>
+
+<%= form_tag root_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+
+	<% if @articles %>
+		<% @articles.each do |article| %>
+			<h1><%= article.title %></h1>
+			<p><%= article.summary %></p>
+		<% end %>
+	<% end %>
+
+
+
+
+ <%= link_to "Create an article", root_path %> 

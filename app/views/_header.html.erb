@@ -1,0 +1,17 @@
+<% if current_user %>
+	<a href="/users/<%=current_user.id%>"><%= current_user.username%></a>
+	<%= link_to 'Logout', logout_path %>
+	<%= link_to 'Home', root_path %>
+
+<% else %>
+	<%= link_to 'Login', controller: 'session', action: "new" %>
+	<%= link_to 'Register', controller: 'users', action: "new" %>
+	<%= link_to 'Home', root_path %>
+<% end %>
+
+<% form_tag root_path do %>
+  <p>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
