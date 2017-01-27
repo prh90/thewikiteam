@@ -1,4 +1,4 @@
-<h1>Fuck u</h1>
+<h1>DBC Wiki</h1>
 
 <%= form_tag root_path, :method => 'get' do %>
   <p>
@@ -7,14 +7,16 @@
   </p>
 <% end %>
 
+
 	<% if @articles %>
 		<% @articles.each do |article| %>
 			<h1><a href="/articles/<%=article.id%>"><%= article.title %></a></h1>
 			<p><%= sanitize article.summary %></p>
 		<% end %>
-	<% end %>
 
 
+<% end %>
 
-
- <%= link_to "Create an article", new_article_path %>
+<% if current_user %>
+  <%= link_to "Create an article", new_article_path %>
+<% end %>

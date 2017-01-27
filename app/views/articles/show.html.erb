@@ -1,4 +1,6 @@
+
 <h1><%= @article.title %><%= link_to "Revisions", article_revisions_path(@article) %> </h1>
+
 <p>
     <%= sanitize @article.summary %>
 </p>
@@ -6,11 +8,18 @@
 
 
 <% @sections.each do |section| %>
+
 <h1>section_id: <%= section.id %>	</h1>
   <h3><%= section.title %><%= link_to "Edit", edit_section_path(section) %></h3>
+
   <p>
     <%= sanitize section.body %>
   </p>
 
 <% end %>
-<%= link_to "Create A Section", new_article_section_path(@article) %>
+<p>
+  <%= link_to "Create A Section", new_article_section_path(@article) %>
+</p>
+<h2>References</h2>
+<hr />
+<%= sanitize @article.footer %>

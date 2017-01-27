@@ -3,12 +3,16 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
- 
+
   <p>
     <%= f.label :body %><br>
-    <%= f.cktext_area :body,rows: 10, ckeditor: {extraPlugins: 'footnotes'} %>
+
+    <div>
+      <%= f.cktext_area :body, rows: 10, ckeditor: {extraPlugins: 'footnotes'} %>
+    </div>
+
   </p>
- 
+
   <p>
     <%= f.submit %>
   </p>
