@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
 		if params[:search]
 			@articles = Article.where('title LIKE ?', "%#{params[:search]}%")
 		else
-			@articles = Article.all
+			@articles = Article.last(5)
 		end
 	end
 
