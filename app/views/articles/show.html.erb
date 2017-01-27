@@ -4,18 +4,16 @@
 <p>
     <%= sanitize @article.summary %>
 </p>
-
-
-
+  <% @images.each do |image| %>
+<p>
+  <%= sanitize image.image %>
+</p>
+  <% end %>
 <% @sections.each do |section| %>
-
-
   <h3><%= section.title %><%= link_to "Edit", edit_section_path(section) %></h3>
-
   <p>
     <%= sanitize section.body %>
   </p>
-
 <% end %>
 <p>
   <%= link_to "Create A Section", new_article_section_path(@article) %>
