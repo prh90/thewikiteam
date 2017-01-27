@@ -1,11 +1,12 @@
 <h1><%= @article.title %></h1>
+<hr />
 <p>
     <%= sanitize @article.summary %>
 </p>
 
 
 <% @sections.each do |section| %>
-  <h3><%= section.title %></h3>
+  <h2><%= section.title %></h2>
   <p>
     <%= sanitize section.body %>
   </p>
@@ -14,4 +15,6 @@
 <p>
   <%= link_to "Create A Section", new_article_section_path(@article) %>
 </p>
+<h2>References</h2>
+<hr />
 <%= sanitize @article.footer %>

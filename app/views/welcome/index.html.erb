@@ -7,14 +7,13 @@
   </p>
 <% end %>
 
-	<% if @articles %>
-		<% @articles.each do |article| %>
-			<h1><%=link_to article.title, article_path(article) %></h1>
-			<p><%= sanitize article.summary %></p>
-		<% end %>
+<% if @articles %>
+	<% @articles.each do |article| %>
+		<h1><%=link_to article.title, article_path(article) %></h1>
+		<p><%= sanitize article.summary %></p>
 	<% end %>
+<% end %>
 
-
-
-
- <%= link_to "Create an article", new_article_path %>
+<% if current_user %>
+  <%= link_to "Create an article", new_article_path %>
+<% end %>
