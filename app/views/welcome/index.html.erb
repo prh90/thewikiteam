@@ -9,7 +9,7 @@
 
 	<% if @articles %>
 		<% @articles.each do |article| %>
-			<h1><%= article.title %></h1>
+			<h1><a href="/articles/<%=article.id%>"><%= article.title %></a></h1>
 			<p><%= sanitize article.summary %></p>
 		<% end %>
 	<% end %>

@@ -22,7 +22,12 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @sections = @article.sections
+    @sections = @article.sections.order(id: :asc)
+    p @sections 
+   # p "sections"
+   # p @article.sections
+    #trying to order by id 
+   # p  @sections.order(id: :asc)
   end
 
 

@@ -1,11 +1,13 @@
-<h1><%= @article.title %></h1>
+<h1><%= @article.title %><%= link_to "Revisions", article_revisions_path(@article) %> </h1>
 <p>
     <%= sanitize @article.summary %>
 </p>
 
 
+
 <% @sections.each do |section| %>
-  <h3><%= section.title %></h3>
+<h1>section_id: <%= section.id %>	</h1>
+  <h3><%= section.title %><%= link_to "Edit", edit_section_path(section) %></h3>
   <p>
     <%= sanitize section.body %>
   </p>

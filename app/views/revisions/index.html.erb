@@ -1,0 +1,13 @@
+<h1>REVISIONS INDEX</h1>
+
+<ul>
+<% @revisions.each do |revision| %>
+
+	<li><%= revision.section.title %><br>
+			<%= revision.section.updated_at.to_s %>
+		
+
+	</li>
+
+<% end %>
+</ul>

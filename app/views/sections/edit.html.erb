@@ -1,4 +1,4 @@
-<%= form_for([@article, @article.sections.build]) do |f| %>
+<%= form_for :section, url: section_path(@section), method: :patch do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
