@@ -30,8 +30,9 @@
                     <div class="intro">
                         <h1 class="text-center"><%= @article.title %></h1>
                         <p class="text-center"><span class="by">by</span> <a href="#"><%=@article.creator.username%> </a><span class="date"><%=@article.created_at%></span></p>
+                        <p class="text-center"><%= link_to "Revisions", article_revisions_path(@article) %></p>
                         <% @images.each do |image| %>
-                        <img class="img-responsive" src=" <%= sanitize image.image %>" />
+                        <div class="img-responsive"><%= sanitize image.image %></div>
                         <% end %>
                         </div>
                     <div class="text">
