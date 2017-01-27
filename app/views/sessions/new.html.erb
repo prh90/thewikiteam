@@ -2,13 +2,17 @@
 <%= @error %>
 <% end %>
 
-<!-- form_tag(action,method) -->
-<%= form_tag(sessions_path, method:'post') do |f| %>
-
-<!-- text_field_tag(id and name) -->
-Email <%= text_field_tag 'user[email]'  %>
-Password <%= password_field_tag 'user[:password]' %>
-
-<!-- submit_tag(text on button) -->
-<%= submit_tag("Log In") %>
-<% end %>
+    <div class="login-clean">
+        	<%= form_tag(sessions_path, method:'post') do |f| %>
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><img src="https://s3.amazonaws.com/codementor_content/2016-Aug/04.png" width="200" /></div>
+            <div class="form-group">
+                <%= text_field_tag 'user[email]', nil, class: 'form-control', placeholder: "Email" %>
+            </div>
+            <div class="form-group">
+                 <%= password_field_tag 'user[:password]', nil, class: 'form-control',placeholder: "Password" %>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info btn-block" ><%= submit_tag("Log In") %></button>
+            </div><% end %>
+    </div>
