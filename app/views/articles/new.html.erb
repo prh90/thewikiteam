@@ -8,14 +8,20 @@
 <p>
   <%= f.label :summary %>
   <div>
-  <%= f.cktext_area :summary, rows: 10, ckeditor: {extraPlugins: 'footnotes'}%>
+  <%= f.cktext_area :summary, ckeditor: {extraPlugins: 'footnotes'}%>
 </div>
   <!-- <%= f.text_field :summary,  style: 'width: 250px; height: 250px;' %> -->
 </p>
 <p>
   <%= f.label :footer %>
   <div>
-  <%= f.cktext_area :footer, rows: 10, ckeditor: {extraPlugins: 'footnotes'}%>
+  <%= f.cktext_area :footer, ckeditor: {extraPlugins: 'footnotes'}%>
+</div>
+</p>
+<p>
+  <%= f.label :images %>
+  <div>
+  <%= f.cktext_area :images, ckeditor: {extraPlugins: 'footnotes'}%>
 </div>
 </p>
 <p>

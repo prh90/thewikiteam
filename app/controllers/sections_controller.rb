@@ -6,7 +6,11 @@ class SectionsController < ApplicationController
 	end
 
 	def edit
-		@section = Section.find(params[:id])
+		if current_user
+			@section = Section.find(params[:id])
+		else
+			redirect_to root_path
+		end
 	end
 
 	def create
@@ -47,7 +51,7 @@ class SectionsController < ApplicationController
     	render 'edit'
   	end
 
-	
+
 
 #who did this and why
 		# @section = Section(params[:id])
