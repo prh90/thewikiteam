@@ -1,0 +1,15 @@
+<%= bootstrap_form_for :section, url: section_path(@section), method: :patch do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :body %><br>
+    <%= f.cktext_area :body,rows: 10, ckeditor: {extraPlugins: 'footnotes'} %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

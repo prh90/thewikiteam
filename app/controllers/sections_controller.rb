@@ -1,7 +1,12 @@
 class SectionsController < ApplicationController
+	include ApplicationHelper
 	def new
 		@article = Article.find(params[:article_id])
 		@section = Section.new
+	end
+
+	def edit
+		@section = Section.find(params[:id])
 	end
 
 	def create
@@ -15,22 +20,44 @@ class SectionsController < ApplicationController
 		end
 	end
 
-	def edit
-		@section = Section(params[:id])
-
-	end
 
 	def show
 	end
 
 	def update
-		@section = Section(params[:id])
-		@revision = Revision.new(user_id: session[:user_id], section_id: params[:id], body: )
 
-		if @revision.save
-			@section.update_attribute(body: @reivison.body)
-		else
-		end
+
+			pp params
+
+ 		# @article = Article.find(params[:article_id])
+
+ 		#params[:id] from route
+		@section = Section.find(params[:id])
+		@article = @section.article
+
+		if @section.update(section_params)
+
+
+    	 @section.revisions << Revision.new(user_id: current_user.id, section_id: @section.id)
+
+    	redirect_to article_path(@article)
+
+
+  	else
+    	render 'edit'
+  	end
+
+	
+
+#who did this and why
+		# @section = Section(params[:id])
+		# @revision = Revision.new(user_id: session[:user_id], section_id: params[:id], body: )
+
+		# if @revision.save
+		# 	@section.update_attribute(body: @reivison.body)
+		# else
+		# end
+
 	end
 
 	private

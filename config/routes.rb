@@ -3,12 +3,17 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :users, only: [:new,:create]
   resources :articles, only: [:new, :create, :show] do
-  	resources :sections, :shallow => true
+
+  	resources :revisions, only: [:index]
+  	resources :sections, :shallow => true 
+
   end
 
   resource :sessions, only:[:create,:destroy]
   get 'login', to: 'sessions#new'
+  
   get 'logout', to: 'sessions#destroy'
+
 
   root "welcome#index"
 
