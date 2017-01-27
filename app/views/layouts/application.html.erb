@@ -21,7 +21,7 @@
     <%#= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"%>
     <%#= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" %>
     <%#= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css"%>
-    <%#= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
     <%#= javascript_include_tag 'application' %>
 
   </head>
@@ -30,6 +30,8 @@
   	<header>
   		<%= render "/header" %>
   	</header>
-    <%= yield %>
+    <div class="main-stuff">
+      <%= yield %>
+    </div>
   </body>
 </html>
