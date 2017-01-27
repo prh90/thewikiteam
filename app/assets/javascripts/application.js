@@ -15,5 +15,3 @@
 //= require turbolinks
 //= require ckeditor/init
 //= require_tree .
-
-CKEDITOR.config.autoParagraph = false;

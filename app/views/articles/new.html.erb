@@ -6,11 +6,17 @@
   <%= f.text_field :title %>
 </p>
 <p>
-  <%= f.label :summary, style: 'vertical-align: top;' %>
+  <%= f.label :summary %>
   <div>
-  <%= f.cktext_area :summary, rows: 10, ckeditor: {extraPlugins: 'footnotes'} %>
+  <%= f.cktext_area :summary, rows: 10, ckeditor: {extraPlugins: 'footnotes'}%>
 </div>
   <!-- <%= f.text_field :summary,  style: 'width: 250px; height: 250px;' %> -->
+</p>
+<p>
+  <%= f.label :footer %>
+  <div>
+  <%= f.cktext_area :footer, rows: 10, ckeditor: {extraPlugins: 'footnotes'}%>
+</div>
 </p>
 <p>
   <%= f.label "Related Categories" %></br>

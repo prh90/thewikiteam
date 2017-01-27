@@ -1,4 +1,4 @@
-<h1>Fuck u</h1>
+<h1>DBC Wiki</h1>
 
 <%= form_tag root_path, :method => 'get' do %>
   <p>
@@ -9,7 +9,7 @@
 
 	<% if @articles %>
 		<% @articles.each do |article| %>
-			<h1><%= article.title %></h1>
+			<h1><%=link_to article.title, article_path(article) %></h1>
 			<p><%= sanitize article.summary %></p>
 		<% end %>
 	<% end %>
