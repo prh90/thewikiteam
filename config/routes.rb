@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resource :sessions, only:[:create,:destroy]
   get 'login', to: 'sessions#new'
+  
   get 'logout', to: 'sessions#destroy'
 
 

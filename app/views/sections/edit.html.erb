@@ -1,4 +1,4 @@
-<%= form_for :section, url: section_path(@section), method: :patch do |f| %>
+<%= bootstrap_form_for :section, url: section_path(@section), method: :patch do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
