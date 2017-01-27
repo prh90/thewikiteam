@@ -1,0 +1,11 @@
+<h1><%= @category.title %></h1>
+<h2>Articles</h2>
+<% if @category.articles.length != 0 %>
+  <ul>
+    <% @articles.each do |article| %>
+      <li>
+        <%= link_to article.title, article_path(article) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
