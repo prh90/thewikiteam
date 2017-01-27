@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
   def new
   end
 
@@ -7,6 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      login(@user)
       redirect_to root_path
     else
       puts "*" * 30 + "inside controller: " + @user.errors.full_messages[0] + "*" * 30
