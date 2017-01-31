@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+  include ApplicationHelper
   def new
 
   end
@@ -8,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_by(login_params)
 
     if user
-      session[:user_id] = user.id
+      login(user)
       redirect_to root_path
     else
       @error = "Your email or password is incorrect"

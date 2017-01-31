@@ -14,3 +14,12 @@
   padding-right: 35px;
 }
 
+img {
+	display: block;
+	margin: 0 auto;
+	max-width: 300px;	
+}
+
+.img-responsive {
+	margin: 0 auto;
+}

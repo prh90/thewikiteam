@@ -18,9 +18,15 @@ end
 
 created_articles = []
 articles.each do |article|
-  created_articles << Article.create!(title: article, summary: "DBC rocks!", footer: "It's alright...", creator_id: rand(1..3))
+  created_articles << Article.create!(title: article, summary: Faker::Lorem.paragraph, footer: "It's alright...", creator_id: rand(1..3))
 end
 
 Category.all.each do |category|
   category.articles << created_articles.sample
+end
+
+Article.all.each do |article|
+	5.times do
+		article.sections.create!(title: Faker::Lorem.word, body: Faker::Lorem.paragraph)
+	end
 end

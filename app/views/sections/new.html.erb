@@ -1,4 +1,4 @@
-<%= bootstrap_form_for([@article, @article.sections.build]) do |f| %>
+<%= form_for([@article, @article.sections.build]) do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -8,8 +8,8 @@
     <%= f.label :body %><br>
 
     <div>
-      <%= f.cktext_area :body, rows: 10, ckeditor: {extraPlugins: 'footnotes'} %>
-    </div>
+    <%= f.cktext_area :body, rows: 10, ckeditor: {extraPlugins: 'footnotes'} %>
+  </div>
 
   </p>
 
