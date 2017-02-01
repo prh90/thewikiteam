@@ -1,0 +1,37 @@
+<h1>Create New Article</h1>
+
+<%= bootstrap_form_for @article do |f| %>
+<p>
+  <%#= f.label :title %>
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :summary %>
+  <div>
+  <%= f.cktext_area :summary, ckeditor: {extraPlugins: 'footnotes'}%>
+</div>
+  <!-- <%= f.text_field :summary,  style: 'width: 250px; height: 250px;' %> -->
+</p>
+<p>
+  <%= f.label :footer %>
+  <div>
+  <%= f.cktext_area :footer, ckeditor: {extraPlugins: 'footnotes'}%>
+</div>
+</p>
+<p>
+  <%= f.label :images %>
+  <div>
+  <%= f.cktext_area :images, ckeditor: {extraPlugins: 'footnotes'}%>
+</div>
+</p>
+<p>
+  <%= f.label "Related Categories" %></br>
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :title do |category| %>
+    <%= category.check_box %>
+    <%= category.label %>
+  <% end %>
+</p>
+<p>
+  <%= f.submit "Create New Article" %>
+</p>
+<% end %>

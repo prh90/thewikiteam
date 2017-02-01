@@ -1,0 +1,31 @@
+<div class="article-clean">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="intro">
+                    <h1 class="text-center"><%= @article.title %></h1>
+                    <p class="text-center"><span class="by">by</span> <a href="#"><%=@article.creator.username%> </a><span class="date"><%=@article.created_at%></span></p>
+                    <p class="text-center"><%= link_to "Revisions", article_revisions_path(@article) %></p>
+                    <% @images.each do |image| %>
+                    <div class="img-responsive"><%= sanitize image.image %></div>
+                    <% end %>
+                    </div>
+                <div class="text">
+                    <p><%= sanitize @article.summary %></p>
+                    	<% @sections.each do |section| %>
+                        <h2><%= section.title %></h2> <%= link_to "Edit", edit_section_path(section) %>
+                    </figure>
+                    <p><%= sanitize section.body %></p>
+                    <% end %>
+                    <p>
+										  <%= link_to "Create A Section", new_article_section_path(@article) %>
+										</p>
+										<h2>References</h2>
+										<hr />
+										<%= sanitize @article.footer %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -4,6 +4,16 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
+
+# Faker gem
+gem 'faker'
+#try bootstrap form 
+gem 'bootstrap_form'
+
+# Editor
+gem 'ckeditor', '4.2.2'
+gem 'paperclip'
 # BCrypt gem
 gem 'bcrypt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -38,6 +48,8 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :development do
